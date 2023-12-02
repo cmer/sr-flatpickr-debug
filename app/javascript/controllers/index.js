@@ -9,9 +9,6 @@ application.register('example', ExampleController)
 import FoobarController from "./foobar_controller"
 application.register('foobar', FoobarController)
 
-import DatepickerController from "./datepicker_controller"
-application.register('datepicker', DatepickerController)
-
 import Flatpickr from "stimulus-flatpickr"
 require("flatpickr/dist/flatpickr.css")
 application.register('flatpickr', Flatpickr)

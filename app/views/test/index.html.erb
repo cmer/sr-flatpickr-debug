@@ -7,16 +7,8 @@
           id: "transition-start_date",
           class: "p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
           data: {
-            controller: "datepicker",
-            reflex: "change->Test#start_date_changed",
-            reflex_dataset: "ancestors",
-            reflex_serialize_form: true,
-            datepicker_allow_input: true,
-            datepicker_alt_format: t("date.formats.long"),
-            datepicker_alt_input: true,
-            datepicker_min_date: "2022-01-01",
-            datepicker_max_date: "2023-12-31",
-            action: "change->foobar#test"
+            controller: "flatpickr",
+            reflex: "change->Test#start_date_changed"
           } %>
       </div>
       <div>
@@ -27,12 +19,7 @@
           data: {
             reflex: "change->Test#start_date_changed",
             reflex_dataset: "ancestors",
-            reflex_serialize_form: true,
-            datepicker_allow_input: true,
-            datepicker_alt_format: t("date.formats.long"),
-            datepicker_alt_input: true,
-            datepicker_min_date: "2022-01-01",
-            datepicker_max_date: "2023-12-31",
+            reflex_serialize_form: true
             action: "change->foobar#test"
           } %>
       </div>
