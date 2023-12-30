@@ -1,27 +1,28 @@
 <main class="p-20" data-controller="foobar">
   <%= form_with url: "#" do |f| %>
-    <div class="flex space-x-10">
+    <div class="flex space-y-10 flex-col">
       <div>
-        <%= f.label :start_date, "Flatpickr" %>
+        <%= f.label :start_date, "With Stimulus Controller attached", class: "block mb-2" %>
         <%= f.text_field :start_date,
           id: "transition-start_date",
-          class: "p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+          class: "p-2 border border-gray-300 rounded-md",
           data: {
-            controller: "flatpickr",
-            reflex: "change->Test#start_date_changed"
-          } %>
+            controller: "foobar",
+            reflex: "change->Test#value_changed"
+          }
+        %>
       </div>
       <div>
-        <%= f.label :start_text, "Text field" %>
+        <%= f.label :start_text, "Without Stimulus Controller Attached", class: "block mb-2" %>
         <%= f.text_field :start_text,
-          id: "transition-start_date",
-          class: "p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+          class: "p-2 border border-gray-300 rounded-md",
           data: {
-            reflex: "change->Test#start_date_changed",
-            reflex_dataset: "ancestors",
-            reflex_serialize_form: true,
-            action: "change->foobar#test"
-          } %>
+            reflex: "change->Test#value_changed"
+          }
+        %>
+      </div>
+      <div>
+        <button class="rounded-md p-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white">Submit</button>
       </div>
     </div>
   <% end %>
