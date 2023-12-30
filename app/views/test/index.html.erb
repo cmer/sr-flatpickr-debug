@@ -2,9 +2,8 @@
   <%= form_with url: "#" do |f| %>
     <div class="flex space-y-10 flex-col">
       <div>
-        <%= f.label :start_date, "With Stimulus Controller attached", class: "block mb-2" %>
-        <%= f.text_field :start_date,
-          id: "transition-start_date",
+        <%= f.label :with_stimulus_controller, "With Stimulus Controller attached", class: "block mb-2" %>
+        <%= f.text_field :with_stimulus_controller,
           class: "p-2 border border-gray-300 rounded-md",
           data: {
             controller: "foobar",
@@ -13,8 +12,8 @@
         %>
       </div>
       <div>
-        <%= f.label :start_text, "Without Stimulus Controller Attached", class: "block mb-2" %>
-        <%= f.text_field :start_text,
+        <%= f.label :without_stimulus_controller, "Without Stimulus Controller Attached", class: "block mb-2" %>
+        <%= f.text_field :without_stimulus_controller,
           class: "p-2 border border-gray-300 rounded-md",
           data: {
             reflex: "change->Test#value_changed"
